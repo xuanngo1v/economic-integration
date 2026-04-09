@@ -1,0 +1,32 @@
+# Secrets
+.env
+.env.local
+.env.*.local
+
+# Data
+*.db
+data/*.json
+data/*.db
+
+# Knowledge (business-specific, not shared)
+knowledge/business/profile.md
+knowledge/business/patterns.md
+knowledge/lessons/lessons.json
+knowledge/lessons/rules.json
+knowledge/log.md
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
