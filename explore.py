@@ -133,15 +133,15 @@ def explore_accounts() -> dict:
 def _describe_range(group: int) -> str:
     """Describe account range in plain language."""
     ranges = {
-        1000: "Assets",
-        2000: "Revenue",
-        3000: "Cost of goods",
-        4000: "Staff costs",
-        5000: "Operating expenses",
-        6000: "Premises / Operating expenses",
-        7000: "Other income/expenses",
-        8000: "Financial items",
-        9000: "Tax & equity",
+        1000: "Revenue",
+        2000: "Cost of goods (COGS)",
+        3000: "Staff costs (Labor)",
+        4000: "Operating expenses (Premises, Transport, Fees, Admin)",
+        5000: "Depreciation / Financial items",
+        6000: "Tax",
+        7000: "Balance sheet",
+        8000: "Balance sheet",
+        9000: "Balance sheet",
     }
     return ranges.get(group, "Other")
 
@@ -390,7 +390,7 @@ def explore_recent_entries() -> dict:
 
     print(f"  Total entries: {len(entries)}")
     print()
-    for cat in ["revenue", "cogs", "labor", "opex", "other_income", "other"]:
+    for cat in ["revenue", "cogs", "labor", "premises", "platform_fees", "admin", "other"]:
         if cat in by_category:
             d = by_category[cat]
             print(f"    {cat:<15} {d['count']:>5} entries  {d['total']:>12,.0f}")

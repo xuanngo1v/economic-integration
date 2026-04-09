@@ -192,7 +192,7 @@ Always log changes with `log_change()` so there's a record.
 
 - If the user's accountant uses account 3500 for food supplies instead of 3010, adapt.
 - If they have custom account categories, explain what you see rather than what you expect.
-- If the account structure doesn't match the standard standard ranges, warn the user that the auto-categorization in workflows might need adjustment.
+- If the account structure doesn't match the standard ranges, warn the user that the auto-categorization in workflows might need adjustment.
 
 **The accountant's structure is the truth. Your category mapping is a convenience.**
 

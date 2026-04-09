@@ -230,17 +230,20 @@ def print_pl_report(conn: sqlite3.Connection) -> None:
     revenue = abs(totals.get("revenue", 0))
     cogs = abs(totals.get("cogs", 0))
     labor = abs(totals.get("labor", 0))
-    opex = abs(totals.get("opex", 0))
+    premises = abs(totals.get("premises", 0))
+    platform_fees = abs(totals.get("platform_fees", 0))
+    admin = abs(totals.get("admin", 0))
+    opex = premises + platform_fees + admin
     gross_profit = revenue - cogs
     gross_margin = (gross_profit / revenue * 100) if revenue else 0
     net_profit = gross_profit - labor - opex
 
     print("\n── P&L from database ────────────────────────────")
     print(f"  Revenue:       {revenue:>12,.0f}")
-    print(f"  COGS (3xxx):   {cogs:>12,.0f}")
+    print(f"  COGS:          {cogs:>12,.0f}")
     print(f"  Gross Profit:  {gross_profit:>12,.0f}  ({gross_margin:.1f}%)")
-    print(f"  Labor (4xxx):  {labor:>12,.0f}")
-    print(f"  OpEx (5-6xxx): {opex:>12,.0f}")
+    print(f"  Labor:         {labor:>12,.0f}")
+    print(f"  OpEx:          {opex:>12,.0f}")
     print(f"  Net Profit:    {net_profit:>12,.0f}")
 
     rows2 = conn.execute("SELECT COUNT(*) as cnt, SUM(amount) as total FROM supplier_invoices").fetchone()

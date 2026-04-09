@@ -22,7 +22,7 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_DIR))
 
-from api import headers, get, get_all, BASE_URL, DATA_DIR, SCHEMA_PATH
+from api import get_all, DATA_DIR
 
 
 def main(days: int = 90):

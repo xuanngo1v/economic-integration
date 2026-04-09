@@ -26,7 +26,7 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_DIR))
 
-from api import headers, get, get_all, BASE_URL, DATA_DIR, SCHEMA_PATH
+from api import get_all, DATA_DIR
 
 from account_map import map_account_category, CATEGORY_LABELS
 
@@ -157,7 +157,7 @@ def main(months: int = 3):
         print(f"\n  No significant month-over-month swings detected.")
 
     # Prime cost trend
-    print(f"\n── Prime Cost Trend ─────────────────��───────────")
+    print(f"\n── Prime Cost Trend ─────────────────────────────")
     for s in summaries:
         bar_len = int(s["prime_cost_pct"] / 2)
         bar = "#" * bar_len

@@ -91,7 +91,7 @@ You need two tokens:
 ### Step 2: Install
 
 ```bash
-cd economic-integration
+cd ledger-pilot
 
 python3 -m venv venv
 source venv/bin/activate    # Mac/Linux
@@ -313,7 +313,7 @@ FROM financial_entries WHERE entry_type = 'revenue' GROUP BY month ORDER BY mont
 ```bash
 # Daily at 08:00 (cron)
 crontab -e
-0 8 * * * cd /path/to/economic-integration && venv/bin/python run.py >> data/run.log 2>&1
+0 8 * * * cd /path/to/ledger-pilot && venv/bin/python run.py >> data/run.log 2>&1
 ```
 
 ---
@@ -322,21 +322,25 @@ crontab -e
 
 ### Account categories
 
-The P&L uses a standard chart of accounts structure:
+The P&L categories are defined in `account_map.py` (the single source of truth). Default ranges:
 
 | Range | Category |
 |-------|----------|
-| 1000-1999 | Assets |
-| 2000-2999 | Revenue |
-| 3000-3999 | Cost of goods |
-| 4000-4999 | Staff costs |
-| 5000-5999 | Premises |
-| 6000-6999 | Operating expenses |
-| 7000-7999 | Other income |
-| 8000-8999 | Financial items |
-| 9000-9999 | Tax & equity |
+| 1000-1999 | Revenue |
+| 2000-2999 | Cost of goods (COGS) |
+| 3000-3999 | Staff costs (Labor) |
+| 4000-4299 | Premises |
+| 4300-4399 | Transport |
+| 4400-4599 | Platform fees |
+| 4600-4699 | Other operating |
+| 4700-4999 | Administration |
+| 5000-5499 | Depreciation |
+| 5500-5599 | Financial income |
+| 5600-5999 | Financial expense |
+| 6000-6999 | Tax |
+| 7000+ | Balance sheet (not P&L) |
 
-If your accountant uses different ranges, update `map_account_category()` in `fetch.py`, `ingest.py`, and the workflow files. Or better — run `python explore.py --section accounts` to see your actual setup first.
+If your accountant uses different ranges, edit `account_map.py` — all workflows import from there. Run `python explore.py --section accounts` to see your actual setup first.
 
 ---
 

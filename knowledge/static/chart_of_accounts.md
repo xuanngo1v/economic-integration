@@ -19,15 +19,13 @@ Most accounting systems group accounts by number ranges. A typical structure:
 
 | Range | Category | Financial Statement |
 |-------|----------|-------------------|
-| 1000-1999 | Assets | Balance Sheet |
-| 2000-2999 | Revenue | P&L (Income Statement) |
-| 3000-3999 | Cost of goods / COGS | P&L |
+| 1000-1999 | Revenue | P&L (Income Statement) |
+| 2000-2999 | Cost of goods (COGS) | P&L |
+| 3000-3999 | Staff costs (Labor) | P&L |
 | 4000-4999 | Operating expenses | P&L |
-| 5000-5999 | Other expenses | P&L |
+| 5000-5999 | Depreciation / Financial | P&L |
 | 6000-6999 | Tax | P&L |
-| 7000-7999 | Balance sheet items | Balance Sheet |
-| 8000-8999 | Financial items | P&L |
-| 9000-9999 | Equity / closing | Balance Sheet |
+| 7000+ | Balance sheet items | Balance Sheet |
 
 **Important:** Every business customizes this. The ranges above are defaults.
 Always check the actual chart of accounts via `explore.py` or `schema.json`.

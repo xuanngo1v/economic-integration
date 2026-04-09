@@ -13,7 +13,7 @@ Your accountant reviews and books vouchers in e-conomic.
 
 Usage:
   python workflows/journal_entry.py --interactive
-  python workflows/journal_entry.py --journal 1 --account 3000 --amount -5000 --text "Supplier X januar"
+  python workflows/journal_entry.py --journal 1 --account 3000 --amount -5000 --text "Supplier X January"
 """
 
 import argparse

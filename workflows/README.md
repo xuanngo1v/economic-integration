@@ -15,12 +15,17 @@ Each workflow is a standalone script that does ONE thing well.
 
 | Workflow | What it does | Read/Write |
 |----------|-------------|------------|
-| `overdue_invoices.py` | Find overdue invoices, show who owes what, aging breakdown | Read-only |
-| `pl_report.py` | Profit & Loss report from journal entries, adapts to your chart of accounts | Read-only |
-| `supplier_spend.py` | Analyze supplier spending: top suppliers, trends, category breakdown | Read-only |
-| `cashflow_check.py` | Cash position: unpaid invoices in vs supplier bills out, timing | Read-only |
-| `create_invoice.py` | Create a draft invoice (requires approval before booking) | Write |
+| `suggest.py` | Analyze state and suggest what to do next | Read-only |
+| `pl_report.py` | Profit & Loss report, adapts to your chart of accounts | Read-only |
+| `prime_cost.py` | Prime cost ratio: (COGS + Labor) / Revenue | Read-only |
+| `monthly_comparison.py` | Month-over-month P&L comparison with change alerts | Read-only |
+| `overdue_invoices.py` | Find overdue invoices, aging breakdown, top debtors | Read-only |
+| `supplier_spend.py` | Top suppliers, spend trends, concentration analysis | Read-only |
+| `cashflow_check.py` | Cash flow: incoming vs outgoing, net position | Read-only |
+| `bookkeeping.py` | Book supplier invoices and expenses | Write |
+| `create_invoice.py` | Create a draft invoice (requires approval) | Write |
 | `journal_entry.py` | Create a journal entry / finance voucher (requires approval) | Write |
+| `review_corrections.py` | Auto-capture accountant corrections as lessons | Read-only |
 
 ## Running a workflow
 

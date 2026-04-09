@@ -235,7 +235,10 @@ def _pl_summary(entries: list[dict]) -> dict:
     revenue = abs(totals.get("revenue", 0))
     cogs = abs(totals.get("cogs", 0))
     labor = abs(totals.get("labor", 0))
-    opex = abs(totals.get("opex", 0))
+    premises = abs(totals.get("premises", 0))
+    platform_fees = abs(totals.get("platform_fees", 0))
+    admin = abs(totals.get("admin", 0))
+    opex = premises + platform_fees + admin
     gross_profit = revenue - cogs
     gross_margin = (gross_profit / revenue * 100) if revenue else 0
     net_profit = gross_profit - labor - opex

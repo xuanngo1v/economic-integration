@@ -31,15 +31,15 @@ If it says `Python 3.11` or higher, you're good. If not:
 If someone sent you a zip file:
 ```bash
 # Unzip it somewhere you can find it
-unzip economic-integration.zip -d ~/Desktop/
-cd ~/Desktop/economic-integration
+unzip ledger-pilot.zip -d ~/Desktop/
+cd ~/Desktop/ledger-pilot
 ```
 
 If you're cloning from git:
 ```bash
 cd ~/Desktop
-git clone <repo-url> economic-integration
-cd economic-integration
+git clone <repo-url> ledger-pilot
+cd ledger-pilot
 ```
 
 ---
@@ -272,30 +272,7 @@ See `knowledge/README.md` for the full architecture.
 
 ## Quick reference: all files
 
-```
-economic-integration/
-├── SETUP.md               # This guide
-├── README.md              # Full documentation
-├── LLM.md                 # AI agent instructions
-├── .env.example           # Token template
-├── .env                   # Your tokens (never share!)
-├── requirements.txt       # Python dependencies (just 2)
-├── run.py                 # Single entry point for everything
-├── fetch.py               # Download from e-conomic API
-├── ingest.py              # Store in SQLite database
-├── explore.py             # Map your setup (read-only)
-├── schema.py              # Build fast-reference index
-├── healthcheck.py         # Detect changes + self-heal
-├── log.py                 # Activity history
-└── workflows/             # Accounting workflows
-    ├── suggest.py             # Suggest next actions
-    ├── overdue_invoices.py    # Who owes you money?
-    ├── pl_report.py           # Profit & Loss
-    ├── supplier_spend.py      # Supplier spending analysis
-    ├── cashflow_check.py      # Cash flow overview
-    ├── create_invoice.py      # Create draft invoice (needs approval)
-    └── journal_entry.py       # Create journal entry (needs approval)
-```
+See the full file tree in [README.md](README.md#files).
 
 ---
 
